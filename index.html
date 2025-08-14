@@ -16,25 +16,40 @@
         <div>
             <input placeholder="2° valor" id="num2" type="text">
         </div>
-        <div>
-            <input placeholder="operador" id="oper" type="text">
+        <div id="operador">
+            <button onclick="definiroperador('+',this)">+</button>
+            <button onclick="definiroperador('-',this)">-</button>
+            <button onclick="definiroperador('*',this)">x</button>
+            <button onclick="definiroperador('/',this)">÷</button>
+            <button onclick="definiroperador('**',this)">x^y</button>
         </div>
+        <br>
         <button onclick="calcular()" id="enviar">Calcular</button>
     </div>    
-    <img src="Heinz_Doofenshmirtz.png" alt="" srcset="">
+    <img src="./Heinz_Doofenshmirtz.png" alt="" srcset="">
     <footer><h3>By malvado Doofenshmirtz, Ggorge, Danylo e Deenilson</h3></footer>
     <div id="resposta"></div>
     <script>
         let num1 = document.getElementById("num1");
         let num2 = document.getElementById("num2");
-        let operador = document.getElementById("oper");
+        let operador;
         let resposta = document.getElementById("resposta");
 
+        function definiroperador(operante,buttondofabio){
+            operador = operante
+            buttondofabio.style.backgroundcolor = "red"
+        }
+
         function calcular(){
-            let texto = document.createElement("h2");
-            let result = eval(num1.value + operador.value + num2.value)
-            resposta.appendChild(texto);
-            texto.innerText = result;
+            if (operador) {
+                let texto = document.createElement("h2");
+                let result = eval(num1.value + operador + num2.value)
+                resposta.appendChild(texto);
+                texto.innerText = "O resultado é " + result;
+            } else {
+                alert("Selecione um operador! Seu idiota!")
+            }
+
         }
     </script>
 </body>
