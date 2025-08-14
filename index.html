@@ -7,23 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Calculonaitor 3000</h1>
-    <label for="">1° valor</label>
-    <input id="num1" type="text">
-    <label for="">2° valor</label>
-    <input id="num2" type="text">
-    <label for="">operador</label>
-    <input id="oper" type="text">
-    <button onclick="calcular()" id="enviar">Somar</button>
+    <h1>Calculo-inaitor 3000</h1>
+    <input placeholder="1° valor" id="num1" type="text">
+    <input placeholder="2° valor" id="num2" type="text">
+    <input placeholder="operador" id="oper" type="text">
+    <button onclick="calcular()" id="enviar">Calcular</button>
     <div id="resposta"></div>
     <script>
         let num1 = document.getElementById("num1");
         let num2 = document.getElementById("num2");
+        let operador = document.getElementById("oper");
         let resposta = document.getElementById("resposta");
 
         function calcular(){
             let texto = document.createElement("h2");
-            let result = parseFloat(num1.value) + parseFloat(num2.value);
+            let result = eval(num1.value + operador.value + num2.value)
             resposta.appendChild(texto);
             texto.innerText = result;
         }
