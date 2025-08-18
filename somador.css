@@ -14,7 +14,7 @@ button {
 }
 
 input {
-    margin-left: 50px;
+    margin-left: 100px;
     margin-top: 15px;
     border-radius: 15px;
     width: 225px;
@@ -30,4 +30,6 @@ img {
 }
 #operador{
     width: 33%;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
